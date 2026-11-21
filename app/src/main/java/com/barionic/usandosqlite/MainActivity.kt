@@ -28,8 +28,45 @@ class MainActivity : AppCompatActivity() {
 
         banco = openOrCreateDatabase("banco.db", MODE_PRIVATE, null)
 
-        binding.btIncluir.set
+        binding.btIncluir.setOnClickListener {
+            btIncluirOnClick()
+        }
 
+        binding.btAlterar.setOnClickListener {
+            btAlterarOnClick()
+        }
 
+        binding.btExcluir.setOnClickListener {
+            btExcluirOnClick()
+        }
+
+        binding.btPesquisar.setOnClickListener {
+            btPesquisarOnClick()
+        }
+
+        binding.btListar.setOnClickListener {
+            btListarOnClick()
+        }
+
+    }
+
+    fun btListarOnClick() {
+        TODO("Not yet implemented")
+    }
+
+    fun btPesquisarOnClick() {
+        TODO("Not yet implemented")
+    }
+
+    fun btExcluirOnClick() {
+        TODO("Not yet implemented")
+    }
+
+    fun btAlterarOnClick() {
+        TODO("Not yet implemented")
+    }
+
+    fun btIncluirOnClick() {
+        TODO("Not yet implemented")
     }
 }
