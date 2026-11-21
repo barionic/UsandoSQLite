@@ -1,6 +1,7 @@
 package com.barionic.usandosqlite
 
 import android.content.ContentValues
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.widget.Toast
@@ -82,10 +83,25 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun btPesquisarOnClick() {
-        TODO("Not yet implemented")
+        val cursor: Cursor = banco.query(
+            "cadastro",
+            null,
+            "_id =${binding.etCod.text.toString()}",
+            null,
+            null,
+            null,
+            null
+        )
+
+        if(cursor.moveToNext()){
+            binding.etNome.setText(cursor.getString(1))
+            binding.etTelefone.setText(cursor.getString(2))
+        } else {
+            Toast.makeText(this, "Registro não Encontrado", Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun btListarOnClick() {
-
+        
     }
 }
