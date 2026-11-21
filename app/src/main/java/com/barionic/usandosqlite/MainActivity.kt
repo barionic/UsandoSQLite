@@ -1,7 +1,9 @@
 package com.barionic.usandosqlite
 
+import android.content.ContentValues
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -51,7 +53,29 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun btListarOnClick() {
+    fun btIncluirOnClick() {
+        val registro = ContentValues()
+        registro.put("nome", binding.etNome.text.toString())
+        registro.put("telefone", binding.etTelefone.text.toString())
+
+        banco.insert("cadastro", null, registro)
+
+        Toast.makeText(this, "Sucesso", Toast.LENGTH_SHORT)
+
+
+    }
+
+    fun btAlterarOnClick() {
+        val registro = ContentValues()
+        registro.put("nome", binding.etNome.text.toString())
+        registro.put("telefone", binding.etTelefone.text.toString())
+
+        banco.update("cadastro", registro, "_id = ${binding.etCod.text.toString()}", null )
+
+        Toast.makeText(this, "Sucesso", Toast.LENGTH_SHORT)
+    }
+
+    fun btExcluirOnClick() {
         TODO("Not yet implemented")
     }
 
@@ -59,15 +83,7 @@ class MainActivity : AppCompatActivity() {
         TODO("Not yet implemented")
     }
 
-    fun btExcluirOnClick() {
-        TODO("Not yet implemented")
-    }
+    fun btListarOnClick() {
 
-    fun btAlterarOnClick() {
-        TODO("Not yet implemented")
-    }
-
-    fun btIncluirOnClick() {
-        TODO("Not yet implemented")
     }
 }
