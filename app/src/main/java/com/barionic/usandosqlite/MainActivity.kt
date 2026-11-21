@@ -102,6 +102,31 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun btListarOnClick() {
-        
+        val cursor: Cursor = banco.query(
+            "cadastro",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        )
+
+        val saida = StringBuilder()
+
+        while (cursor.moveToNext()){
+            saida.append(cursor.getString(NOME))
+            saida.append(" - ")
+            saida.append(cursor.getString(TELEFONE))
+            saida.append("\n")
+        }
+
+        Toast.makeText(this, saida.toString(), Toast.LENGTH_SHORT).show()
+    }
+
+    companion object {
+        private const val ID = 0
+        private const val NOME = 1
+        private const val TELEFONE = 2
     }
 }
