@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
         banco.insert("cadastro", null, registro)
 
-        Toast.makeText(this, "Sucesso", Toast.LENGTH_SHORT)
+        Toast.makeText(this, "Sucesso", Toast.LENGTH_SHORT).show()
 
 
     }
@@ -72,11 +72,13 @@ class MainActivity : AppCompatActivity() {
 
         banco.update("cadastro", registro, "_id = ${binding.etCod.text.toString()}", null )
 
-        Toast.makeText(this, "Sucesso", Toast.LENGTH_SHORT)
+        Toast.makeText(this, "Sucesso", Toast.LENGTH_SHORT).show()
     }
 
     fun btExcluirOnClick() {
-        TODO("Not yet implemented")
+        banco.delete("cadastro", "_id = ${binding.etCod.text.toString()}", null )
+
+        Toast.makeText(this, "Sucesso", Toast.LENGTH_SHORT).show()
     }
 
     fun btPesquisarOnClick() {
