@@ -94,8 +94,8 @@ class MainActivity : AppCompatActivity() {
         )
 
         if(cursor.moveToNext()){
-            binding.etNome.setText(cursor.getString(1))
-            binding.etTelefone.setText(cursor.getString(2))
+            binding.etNome.setText(cursor.getString(NOME))
+            binding.etTelefone.setText(cursor.getString(TELEFONE))
         } else {
             Toast.makeText(this, "Registro não Encontrado", Toast.LENGTH_SHORT).show()
         }
