@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         banco = openOrCreateDatabase("banco.db", MODE_PRIVATE, null)
-        banco.execSQL("CREATE TABLE IF NOT EXISTS cadastro(_id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, telefone TEXT)")
+        //banco.execSQL("CREATE TABLE IF NOT EXISTS cadastro(_id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, telefone TEXT)")
 
         binding.btIncluir.setOnClickListener {
             btIncluirOnClick()
